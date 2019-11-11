@@ -29,3 +29,14 @@ test('closed and unlocked', () => {
 	fireEvent.click(openButton);
 	expect(mock).toHaveBeenCalledTimes(1);
 });
+
+test('closed and locked', () => {
+	const mock = jest.fn();
+	const { getByText } = render(<Controls locked={true} closed={true} toggleLocked={mock} />);
+	const unlockButton = getByText('Unlock Gate');
+	expect(unlockButton.disabled).toBe(false);
+	const openButton = getByText('Open Gate');
+	expect(openButton.disabled).toBe(true);
+	fireEvent.click(unlockButton);
+	expect(mock).toHaveBeenCalledTimes(1);
+});
