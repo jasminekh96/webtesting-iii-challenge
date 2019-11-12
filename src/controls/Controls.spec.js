@@ -40,3 +40,20 @@ test('closed and locked', () => {
 	fireEvent.click(unlockButton);
 	expect(mock).toHaveBeenCalledTimes(1);
 });
+
+// test('has default states ', () => {
+// 	const { getByText } = render(<Controls locked={false} closed={false} />);
+// 	expect(getByText('Unlocked'));
+// 	expect(getByText('Open'));
+// 	expect(getByText('Lock Gate'));
+// 	expect(getByText('Close Gate'));
+// });
+// test('buttons change', () => {
+// 	const { getByText, queryByText } = render(<Controls />);
+// 	const closeButton = queryByText('Close Gate');
+// 	fireEvent.click(closeButton);
+// 	expect(getByText('Unlocked'));
+// 	expect(getByText('Closed'));
+// 	expect(getByText('Lock Gate'));
+// 	expect(getByText('Open Gate'));
+// });
