@@ -7,7 +7,7 @@ test('Display renders correctly', () => {
 	expect(render(<Display />)).toMatchSnapshot();
 });
 
-test('Uses "red-led" if locked.', () => {
+test('Uses "red-led" if closed.', () => {
 	const { queryByText } = render(<Display locked={true} />);
 	const locked = queryByText(/locked/i);
 	expect(locked.className.includes('red-led')).toBeTruthy();
@@ -15,6 +15,6 @@ test('Uses "red-led" if locked.', () => {
 
 test('Uses "green-led" if locked.', () => {
 	const { getByText } = render(<Display locked={false} />);
-	const unlocked = getByText(/locked/i);
+	const unlocked = getByText(/unlocked/i);
 	expect(unlocked.className.includes('green-led')).toBeTruthy();
 });
